@@ -24,20 +24,23 @@ const TabItem: React.FC<Props> = ({ isActive, pathname, onPress }) => {
           <Home
             width={iconSize}
             height={iconSize}
-            color={isActive ? colors.black : colors.primary}
+            opacity={isActive ? 1 : 0.4}
+            color={colors.primaryDark}
           />
         ) : pathname === "/setting" ? (
           <Setting
             width={iconSize}
             height={iconSize}
-            color={isActive ? colors.grey : colors.primary}
+            opacity={isActive ? 1 : 0.4}
+            color={colors.primaryDark}
           />
         ) : (
           pathname === "/calendar" && (
             <Calendar
               width={iconSize}
               height={iconSize}
-              color={isActive ? colors.grey : colors.primary}
+              opacity={isActive ? 1 : 0.4}
+              color={colors.primaryDark}
             />
           )
         ))}

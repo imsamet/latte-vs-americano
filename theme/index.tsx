@@ -13,10 +13,11 @@ const colors = {
   danger20: "#2F0800",
   danger60: "#771300",
   info: "#004eed",
-  text: "#d3d3d3",
+  text: "#C1C1C1",
   dark: "#242424",
   yellow: "#f7da00",
   grey: "#505050",
+  bg: "#FFFAF0",
 } as const;
 
 const layout = StyleSheet.create({
@@ -24,7 +25,7 @@ const layout = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     width: "100%",
-    backgroundColor: "#FFFAF0",
+    backgroundColor: colors.bg,
     paddingLeft: 24,
     paddingRight: 24,
   },

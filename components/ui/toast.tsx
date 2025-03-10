@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, Animated, View } from "react-native";
-import { ErrorType } from "../../core/_model";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useAppContext } from "@/context";
+import { ErrorType } from "@/core/_model";
+import useSafeArea from "@/hook/useSafeArea";
 import { colors } from "@/theme";
 import Text from "./text";
 
 const Toast = () => {
   const { state, dispatch } = useAppContext();
   const { toastList } = state;
+
   const [currentError, setCurrentError] = useState<ErrorType | null>(null);
   const fadeAnim = useState(new Animated.Value(0))[0];
   const progressAnim = useState(new Animated.Value(0))[0]; // Progress bar animasyonu için
-  const insets = useSafeAreaInsets();
+  const insets = useSafeArea();
   const variables = {
     ping: 500,
     duration: 3000,
@@ -48,6 +49,7 @@ const Toast = () => {
 
       return () => clearTimeout(timer);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [toastList, fadeAnim, progressAnim, dispatch]);
 
   if (!currentError) {
@@ -59,36 +61,40 @@ const Toast = () => {
   });
   const getProgressColor = (): string =>
     currentError.type === "success"
-      ? colors.primary
+      ? colors.primaryDark
       : currentError.type === "info"
       ? colors.info
       : currentError.type === "warning"
       ? colors.yellow
       : currentError.type === "danger"
       ? colors.danger
-      : colors.primary;
+      : colors.primaryDark;
 
   return (
-    <View style={[styles.container, { paddingTop: insets.top }]}>
-      <Animated.View style={[styles.toast, { opacity: fadeAnim }]}>
-        <Animated.View
-          style={[
-            styles.progressBar,
-            { backgroundColor: getProgressColor(), width: progressBarWidth },
-          ]}
-        />
-        <View style={styles.content}>
-          <View style={styles.textBox}>
-            <Text size={16}>{currentError.title}</Text>
-            {currentError.description && (
-              <Text size={11} fontWeight="400" color={colors.grey}>
-                {currentError.description}
+    toastList.length > 0 && (
+      <View style={[styles.container, { paddingTop: insets.top }]}>
+        <Animated.View style={[styles.toast, { opacity: fadeAnim }]}>
+          <Animated.View
+            style={[
+              styles.progressBar,
+              { backgroundColor: getProgressColor(), width: progressBarWidth },
+            ]}
+          />
+          <View style={styles.content}>
+            <View style={styles.textBox}>
+              <Text color={colors.primaryDark} size={16}>
+                {currentError.title}
               </Text>
-            )}
+              {currentError.description && (
+                <Text size={11} fontWeight="400" color={colors.grey}>
+                  {currentError.description}
+                </Text>
+              )}
+            </View>
           </View>
-        </View>
-      </Animated.View>
-    </View>
+        </Animated.View>
+      </View>
+    )
   );
 };
 
@@ -102,9 +108,10 @@ const styles = StyleSheet.create({
     zIndex: 1000,
   },
   toast: {
-    backgroundColor: colors.black,
+    backgroundColor: colors.white,
     borderWidth: 3,
     borderRadius: 16,
+    borderColor: colors.white,
     margin: 10,
     width: 300,
     overflow: "hidden",
@@ -119,7 +126,7 @@ const styles = StyleSheet.create({
     gap: 5,
     justifyContent: "center",
     borderRadius: 12,
-    backgroundColor: colors.black,
+    backgroundColor: colors.white,
     paddingLeft: 25,
     paddingRight: 25,
     paddingBottom: 15,

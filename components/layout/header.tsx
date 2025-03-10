@@ -15,7 +15,7 @@ const Header: React.FC<Props> = ({ title }) => {
   return (
     <View style={[styles.headerContainer, { marginTop: insets.top }]}>
       <View style={styles.titleBox}>
-        <Text size={16} color={colors.grey}>
+        <Text size={24} color={colors.grey} style={{ marginBottom: 10 }}>
           {title || "Başlık"}
         </Text>
       </View>
@@ -33,12 +33,10 @@ const styles = StyleSheet.create({
 
     flexDirection: "row",
     height: 65,
+    alignItems: "flex-end",
     justifyContent: "space-between",
     zIndex: 10,
   },
-  titleBox: {
-    flex: 1,
-    alignItems: "center",
-  },
+  titleBox: {},
 });
 export default Header;

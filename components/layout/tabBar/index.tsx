@@ -21,13 +21,13 @@ const TabBar: React.FC<Props> = ({ prop }) => {
     {
       pathname: "/calendar",
       onPress: () => {
-        router.push("/(app)");
+        router.push("/(app)/calendar");
       },
     },
     {
       pathname: "/setting",
       onPress: () => {
-        router.push("/(app)");
+        router.push("/(app)/setting");
       },
     },
   ];
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   container: {
     borderTopWidth: 1,
     borderColor: "#00000033",
-    backgroundColor: colors.primaryDark,
+    backgroundColor: colors.primary,
   },
   content: {
     flexDirection: "row",

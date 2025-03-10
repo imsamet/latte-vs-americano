@@ -2,6 +2,7 @@ import { StyleProp, Text as T, TextStyle } from "react-native";
 import { colors } from "../../theme";
 import { FontWeights } from "../../core/_model";
 import WeightToFont from "../../utils/weightToFont";
+import { ReactNode } from "react";
 
 type Props = {
   size?: number;
@@ -9,7 +10,7 @@ type Props = {
   align?: "left" | "right" | "center";
   fontWeight?: FontWeights;
 
-  children?: string;
+  children?: ReactNode;
   style?: StyleProp<TextStyle>;
 };
 const Text: React.FC<Props> = ({

@@ -14,9 +14,21 @@ export default function Layout() {
     >
       <Tabs.Screen
         options={{
-          title: "Anasayfa",
+          title: "📆 Eklenenler",
         }}
         name="index"
+      />
+      <Tabs.Screen
+        options={{
+          title: "📆 Haftalık Takvim",
+        }}
+        name="calendar"
+      />
+      <Tabs.Screen
+        options={{
+          title: "📆 Ayarlar",
+        }}
+        name="setting"
       />
     </Tabs>
   );

@@ -1,10 +1,10 @@
 import Layout from "@/components/layout";
-import EventList from "@/components/module/event-list";
+import Setting from "@/components/module/setting";
 
 export default function Index() {
   return (
     <Layout>
-      <EventList />
+      <Setting />
     </Layout>
   );
 }

@@ -1,10 +1,10 @@
 import Layout from "@/components/layout";
-import EventList from "@/components/module/event-list";
+import WeeklyCalendar from "@/components/module/weekly-calendar";
 
 export default function Index() {
   return (
     <Layout>
-      <EventList />
+      <WeeklyCalendar />
     </Layout>
   );
 }

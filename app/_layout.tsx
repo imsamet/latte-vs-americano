@@ -7,6 +7,7 @@ import "react-native-reanimated";
 import useLoader from "@/hook/useLoader";
 import { AppProvider } from "@/context";
 import Loading from "@/components/ui/loading";
+import Toast from "@/components/ui/toast";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -21,6 +22,7 @@ export default function RootLayout() {
     <AppProvider>
       <GestureHandlerRootView style={{ flex: 1 }}>
         <Loading />
+        <Toast />
         <Stack>
           <Stack.Screen name="index" options={{ headerShown: false }} />
           <Stack.Screen name="(app)" options={{ headerShown: false }} />
