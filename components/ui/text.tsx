@@ -4,7 +4,7 @@ import { FontWeights } from "../../core/_model";
 import WeightToFont from "../../utils/weightToFont";
 
 type Props = {
-  size: number;
+  size?: number;
   color?: string;
   align?: "left" | "right" | "center";
   fontWeight?: FontWeights;

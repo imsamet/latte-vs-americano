@@ -2,6 +2,7 @@ import { StyleSheet } from "react-native";
 
 const colors = {
   primary: "#ECD19F",
+  primaryDark: "#C89D4C",
   black: "#000000",
   white: "#ffffff",
   primary80: "#aced28",
