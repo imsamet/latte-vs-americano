@@ -27,9 +27,9 @@ const Button: React.FC<Props> = ({
   const btnColor = color
     ? color
     : type === "primary"
-    ? colors.grey
+    ? colors.dark
     : type === "secondary"
-    ? colors.primaryDark
+    ? colors.teriary
     : "";
   const styles = [
     buttonStyle.button,
@@ -83,7 +83,7 @@ const buttonStyle = StyleSheet.create({
     backgroundColor: colors.primary,
   },
   secondary: {
-    borderColor: colors.primaryDark,
+    borderColor: colors.teriary,
     borderWidth: 1,
   },
   large: {

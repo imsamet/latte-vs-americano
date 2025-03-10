@@ -61,14 +61,14 @@ const Toast = () => {
   });
   const getProgressColor = (): string =>
     currentError.type === "success"
-      ? colors.primaryDark
+      ? colors.dark
       : currentError.type === "info"
-      ? colors.info
+      ? colors.dark
       : currentError.type === "warning"
-      ? colors.yellow
+      ? colors.teriary
       : currentError.type === "danger"
-      ? colors.danger
-      : colors.primaryDark;
+      ? colors.teriary
+      : colors.dark;
 
   return (
     toastList.length > 0 && (
@@ -82,11 +82,11 @@ const Toast = () => {
           />
           <View style={styles.content}>
             <View style={styles.textBox}>
-              <Text color={colors.primaryDark} size={16}>
+              <Text color={colors.dark} size={16}>
                 {currentError.title}
               </Text>
               {currentError.description && (
-                <Text size={11} fontWeight="400" color={colors.grey}>
+                <Text size={11} fontWeight="400" color={colors.text}>
                   {currentError.description}
                 </Text>
               )}
@@ -108,10 +108,10 @@ const styles = StyleSheet.create({
     zIndex: 1000,
   },
   toast: {
-    backgroundColor: colors.white,
+    backgroundColor: colors.bg,
     borderWidth: 3,
     borderRadius: 16,
-    borderColor: colors.white,
+    borderColor: colors.primary,
     margin: 10,
     width: 300,
     overflow: "hidden",
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
     gap: 5,
     justifyContent: "center",
     borderRadius: 12,
-    backgroundColor: colors.white,
+    backgroundColor: colors.bg,
     paddingLeft: 25,
     paddingRight: 25,
     paddingBottom: 15,

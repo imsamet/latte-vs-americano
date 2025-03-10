@@ -4,6 +4,7 @@ import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import "react-native-reanimated";
+
 import useLoader from "@/hook/useLoader";
 import { AppProvider } from "@/context/app";
 import Loading from "@/components/ui/loading";
@@ -26,7 +27,7 @@ export default function RootLayout() {
           <Loading />
           <Toast />
           <Stack>
-            <Stack.Screen name="index" options={{ headerShown: false }} />
+            <Stack.Screen name="login" options={{ headerShown: false }} />
             <Stack.Screen name="(app)" options={{ headerShown: false }} />
             <Stack.Screen name="+not-found" />
           </Stack>

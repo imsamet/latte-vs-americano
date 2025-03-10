@@ -13,10 +13,10 @@ const Highlight = () => {
       {/* En Son Eklenen Aktif Etkinlik */}
       {eventList.length > 0 && (
         <View style={styles.activeEvent}>
-          <Text size={18} color={colors.primary}>
+          <Text size={18} color={colors.secondary}>
             🟢 Aktif Etkinlik:
           </Text>
-          <Text size={24} color={colors.grey}>
+          <Text size={24} color={colors.dark}>
             {formatDate(eventList[0].date)} -{" "}
             {getUserName(eventList[0].createdBy)}
           </Text>
@@ -27,7 +27,7 @@ const Highlight = () => {
 };
 
 const styles = StyleSheet.create({
-  activeEvent: { marginTop: 20, padding: 10, gap: 8, marginBottom: 32 },
+  activeEvent: { marginTop: 20, paddingVertical: 10, gap: 8, marginBottom: 32 },
 });
 
 export default Highlight;

@@ -1,11 +1,13 @@
 import Header from "@/components/layout/header";
 import TabBar from "@/components/layout/tabBar";
+import { colors } from "@/theme";
 import { Tabs } from "expo-router";
 
 export default function Layout() {
   return (
     <Tabs
       screenOptions={{
+        sceneStyle: { backgroundColor: colors.bg },
         header: ({ navigation, route, options }) => (
           <Header title={options.title} />
         ),

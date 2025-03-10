@@ -73,7 +73,7 @@ const Input: React.FC<Props> = ({
         />
       </Pressable>
       {!!error && (
-        <Text color={colors.danger} size={10} fontWeight="400">
+        <Text color={colors.teriary} size={10} fontWeight="400">
           {error}
         </Text>
       )}
@@ -97,8 +97,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.dark,
   },
   error: {
-    borderColor: colors.danger,
-    backgroundColor: colors.danger20,
+    borderColor: colors.teriary,
   },
   input: {
     flex: 1,
@@ -107,12 +106,12 @@ const styles = StyleSheet.create({
     letterSpacing: -0.24,
     fontSize: 14,
     fontWeight: "400",
-    color: colors.grey,
+    color: colors.dark,
   },
   transparentInput: {
     backgroundColor: "transparent",
     borderWidth: 1,
-    borderColor: colors.primaryDark,
+    borderColor: colors.dark,
   },
 });
 export default Input;

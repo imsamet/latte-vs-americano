@@ -15,7 +15,7 @@ const Header: React.FC<Props> = ({ title }) => {
   return (
     <View style={[styles.headerContainer, { marginTop: insets.top }]}>
       <View style={styles.titleBox}>
-        <Text size={24} color={colors.grey} style={{ marginBottom: 10 }}>
+        <Text size={24} color={colors.teriary} style={{ marginBottom: 10 }}>
           {title || "Başlık"}
         </Text>
       </View>
@@ -24,15 +24,9 @@ const Header: React.FC<Props> = ({ title }) => {
 };
 const styles = StyleSheet.create({
   headerContainer: {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    right: 0,
-    paddingTop: 4,
-    paddingHorizontal: 20,
-
+    paddingTop: 6,
+    paddingHorizontal: 24,
     flexDirection: "row",
-    height: 65,
     alignItems: "flex-end",
     justifyContent: "space-between",
     zIndex: 10,

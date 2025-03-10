@@ -23,8 +23,8 @@ const EmailLogin: React.FC = () => {
     password: Yup.string().required("Zorunlu alan 🙃"),
   });
   const initialValues: RegisterType = {
-    username: "",
-    password: "",
+    username: "latte@app.com",
+    password: "123456",
   };
   const handleFormSubmit = async (submit: () => void) => {
     setValidateOnChange(true);

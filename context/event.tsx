@@ -6,7 +6,7 @@ import {
   query,
   addDoc,
 } from "firebase/firestore";
-import { db } from "@/firebaseConfig";
+import { auth, db } from "@/firebaseConfig";
 import React, {
   createContext,
   useContext,
@@ -22,6 +22,7 @@ type EventState = {
   addEvent: (event: IEvent) => Promise<void>;
   removeEvent: (eventUid: string) => void;
   getUserName: (uid: string) => string;
+  getUserMe: () => string;
 };
 
 // Başlangıç durumu
@@ -32,6 +33,7 @@ const initialState: EventState = {
   addEvent: async (event: IEvent) => {},
   removeEvent: (eventUid: string) => {},
   getUserName: (uid: string) => "",
+  getUserMe: () => "",
 };
 
 // Context oluştur
@@ -88,6 +90,11 @@ export const EventProvider = ({ children }: { children: ReactNode }) => {
     return user ? `${user.title} ${user.name}` : "";
   };
 
+  const getUserMe = (): string => {
+    const user = users.find((i) => i.uid === auth.currentUser?.uid);
+    return user ? `${user.title} ${user.name}` : "";
+  };
+
   return (
     <EventContext.Provider
       value={{
@@ -97,6 +104,7 @@ export const EventProvider = ({ children }: { children: ReactNode }) => {
         addEvent,
         removeEvent,
         getUserName,
+        getUserMe,
       }}
     >
       {children}

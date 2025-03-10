@@ -15,7 +15,7 @@ type Props = {
 };
 const Text: React.FC<Props> = ({
   align = "left",
-  color = colors.white,
+  color = colors.dark,
   fontWeight = "700",
   size = 24,
   style,

@@ -24,23 +24,20 @@ const TabItem: React.FC<Props> = ({ isActive, pathname, onPress }) => {
           <Home
             width={iconSize}
             height={iconSize}
-            opacity={isActive ? 1 : 0.4}
-            color={colors.primaryDark}
+            color={isActive ? colors.teriary : colors.dark}
           />
         ) : pathname === "/setting" ? (
           <Setting
             width={iconSize}
             height={iconSize}
-            opacity={isActive ? 1 : 0.4}
-            color={colors.primaryDark}
+            color={isActive ? colors.teriary : colors.dark}
           />
         ) : (
           pathname === "/calendar" && (
             <Calendar
               width={iconSize}
               height={iconSize}
-              opacity={isActive ? 1 : 0.4}
-              color={colors.primaryDark}
+              color={isActive ? colors.teriary : colors.dark}
             />
           )
         ))}
@@ -52,27 +49,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     paddingTop: 15,
-  },
-  qr: {
-    backgroundColor: colors.primary,
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
-    marginTop: -20,
-  },
-  image: {
-    width: 30,
-    height: 30,
-  },
-  notification: {
-    position: "absolute",
-    top: 5,
-    right: 12,
-    backgroundColor: colors.danger,
-    borderRadius: 999,
-    width: 20,
-    height: 20,
-    justifyContent: "center",
-    alignItems: "center",
   },
 });
 export default TabItem;

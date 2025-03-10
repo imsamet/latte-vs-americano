@@ -1,12 +1,5 @@
 import React, { useState } from "react";
-import {
-  View,
-  StyleSheet,
-  Modal,
-  Platform,
-  TouchableWithoutFeedback,
-  Keyboard,
-} from "react-native";
+import { View, StyleSheet, Modal, Platform } from "react-native";
 import { Calendar } from "react-native-calendars";
 import { auth } from "@/firebaseConfig";
 import Button from "../ui/button";
@@ -19,6 +12,7 @@ import useSafeArea from "@/hook/useSafeArea";
 import Input from "../ui/input";
 import Highlight from "../cards/highlight";
 import { useEventContext } from "@/context/event";
+import KeyboardHandle from "../expo-config/keyboard-handle";
 
 const WeeklyCalendar = () => {
   const { addEvent } = useEventContext();
@@ -57,6 +51,7 @@ const WeeklyCalendar = () => {
         date: dateTime,
         createdBy: auth.currentUser.uid,
         createdAt: new Date(),
+        ...(description.length > 0 ? { description } : {}),
       });
 
       dispatch({
@@ -72,12 +67,15 @@ const WeeklyCalendar = () => {
       console.error("Etkinlik eklerken hata oluştu: ", error);
     }
     dispatch({ type: "SET_LOADING", payload: false });
+    setSelectedDate("");
+    setDescription("");
   };
 
   // Modal'ı aç/kapat
   const openModal = () => setModalVisible(true);
   const closeModal = () => {
     setSelectedDate("");
+    setDescription("");
     setModalVisible(false);
   };
 
@@ -96,10 +94,10 @@ const WeeklyCalendar = () => {
         }}
         theme={{
           calendarBackground: "transparent",
-          dayTextColor: colors.grey,
+          dayTextColor: colors.dark,
           todayTextColor: colors.primary,
           arrowColor: colors.primary,
-          monthTextColor: "#000",
+          monthTextColor: colors.teriary,
         }}
       />
       {/* Saat Seçimi için Modal */}
@@ -109,7 +107,7 @@ const WeeklyCalendar = () => {
         animationType="slide"
         onRequestClose={closeModal}
       >
-        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <KeyboardHandle>
           <View style={styles.modalOverlay}>
             <View
               style={[
@@ -121,7 +119,7 @@ const WeeklyCalendar = () => {
               <Text
                 size={20}
                 align="center"
-                color={colors.primaryDark}
+                color={colors.teriary}
                 style={{ marginBottom: 20 }}
               >
                 Saat Seç
@@ -160,7 +158,7 @@ const WeeklyCalendar = () => {
               </View>
             </View>
           </View>
-        </TouchableWithoutFeedback>
+        </KeyboardHandle>
       </Modal>
     </View>
   );

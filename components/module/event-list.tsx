@@ -15,7 +15,7 @@ const EventList = () => {
 
       {/* Etkinlik Listesi */}
       <View style={{ flex: 1 }}>
-        <Text size={18} color={colors.primary}>
+        <Text size={18} color={colors.secondary} style={{ marginBottom: 12 }}>
           📋 Tam Liste Etkinlikler:
         </Text>
         <FlatList
@@ -23,9 +23,19 @@ const EventList = () => {
           keyExtractor={(item) => item.createdAt.toString()}
           renderItem={({ item }) => (
             <View style={styles.eventItem}>
-              <Text size={16} color={colors.text}>
-                {formatDate(item.date)} - {getUserName(item.createdBy)}
-              </Text>
+              <View style={styles.eventItemContent}>
+                <Text size={16} color={colors.dark}>
+                  {formatDate(item.date)}
+                </Text>
+                <Text size={14} color={colors.secondary}>
+                  {getUserName(item.createdBy)}
+                </Text>
+              </View>
+              {item?.description && (
+                <Text size={12} fontWeight="400" color={colors.dark}>
+                  {item?.description}
+                </Text>
+              )}
             </View>
           )}
         />
@@ -38,9 +48,17 @@ const styles = StyleSheet.create({
   container: { flex: 1 },
   eventItem: {
     flex: 1,
-    padding: 10,
+    gap: 12,
+    paddingVertical: 12,
+    justifyContent: "space-between",
     borderBottomWidth: 1,
-    borderBottomColor: "#ccc",
+    borderBottomColor: colors.text,
+    marginBottom: 24,
+  },
+  eventItemContent: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
 });
 
