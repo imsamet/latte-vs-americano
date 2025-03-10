@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, Animated, View } from "react-native";
-import { useAppContext } from "@/context";
+import { useAppContext } from "@/context/app";
 import { ErrorType } from "@/core/_model";
 import useSafeArea from "@/hook/useSafeArea";
 import { colors } from "@/theme";

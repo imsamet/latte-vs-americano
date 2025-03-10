@@ -25,3 +25,17 @@ export type ErrorType = {
   title: string;
   description?: string;
 };
+
+export interface IEvent {
+  id?: string;
+  createdAt: Date;
+  date: string;
+  createdBy: string;
+  description?: string;
+}
+
+export interface IUser {
+  name: string;
+  title: string;
+  uid: string;
+}

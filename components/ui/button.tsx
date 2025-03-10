@@ -9,7 +9,6 @@ type Props = {
   type?: "primary" | "secondary";
   size?: "large" | "small";
   style?: StyleProp<ViewStyle> | false;
-  to?: string | false;
   isCenter?: boolean;
   color?: string;
   disabled?: boolean;
@@ -20,7 +19,6 @@ const Button: React.FC<Props> = ({
   label,
   size = "large",
   type = "primary",
-  to,
   isCenter,
   color,
   disabled,
@@ -31,7 +29,7 @@ const Button: React.FC<Props> = ({
     : type === "primary"
     ? colors.grey
     : type === "secondary"
-    ? colors.white
+    ? colors.primaryDark
     : "";
   const styles = [
     buttonStyle.button,
@@ -85,7 +83,7 @@ const buttonStyle = StyleSheet.create({
     backgroundColor: colors.primary,
   },
   secondary: {
-    borderColor: colors.primary,
+    borderColor: colors.primaryDark,
     borderWidth: 1,
   },
   large: {

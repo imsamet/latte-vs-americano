@@ -62,6 +62,7 @@ const EmailLogin: React.FC = () => {
               <Button
                 onPress={() => handleFormSubmit(handleSubmit)}
                 label="Giriş Yap"
+                isCenter
               />
             </View>
           </View>

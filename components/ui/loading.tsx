@@ -1,4 +1,4 @@
-import { useAppContext } from "@/context";
+import { useAppContext } from "@/context/app";
 import { colors } from "@/theme";
 import { ActivityIndicator, StyleSheet, View } from "react-native";
 

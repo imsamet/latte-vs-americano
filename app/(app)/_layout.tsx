@@ -14,13 +14,13 @@ export default function Layout() {
     >
       <Tabs.Screen
         options={{
-          title: "📆 Eklenenler",
+          title: "📆 Etkinlikler",
         }}
         name="index"
       />
       <Tabs.Screen
         options={{
-          title: "📆 Haftalık Takvim",
+          title: "📆 Etkinlik Ekle",
         }}
         name="calendar"
       />

@@ -45,7 +45,7 @@ const PasswordInput: React.FC<Props> = ({
         <TextInput
           style={styles.input}
           placeholder={placeholder}
-          placeholderTextColor={colors.grey}
+          placeholderTextColor={colors.text}
           secureTextEntry
           ref={inputRef}
           {...props}
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
   inputBox: {
     flexDirection: "row",
     justifyContent: "space-between",
-    height: 48,
+    // height: 48,
     paddingBottom: 12,
     paddingTop: 12,
     paddingLeft: 16,
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
   transparentInput: {
     backgroundColor: "transparent",
     borderWidth: 1,
-    borderColor: colors.grey,
+    borderColor: colors.primaryDark,
   },
 });
 export default PasswordInput;
