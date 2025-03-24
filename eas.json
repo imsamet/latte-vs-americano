@@ -1,0 +1,18 @@
+{
+  "build": {
+    "production": {
+      "ios": {
+        "buildConfiguration": "Release"
+      }
+    }
+  },
+  "submit": {
+    "production": {
+      "ios": {
+        "appleId": "imsametcetin@gmail.com",
+        "ascAppId": "6743675467",
+        "appleTeamId": "457VDJV7H9"
+      }
+    }
+  }
+}

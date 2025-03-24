@@ -17,8 +17,8 @@ const Highlight = () => {
             🟢 Aktif Etkinlik:
           </Text>
           <Text size={24} color={colors.dark}>
-            {formatDate(eventList[0].date)} -{" "}
-            {getUserName(eventList[0].createdBy)}
+            {formatDate(eventList[0].date)}
+            {/* {getUserName(eventList[0].createdBy)} */}
           </Text>
         </View>
       )}
