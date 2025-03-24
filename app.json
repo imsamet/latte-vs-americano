@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "latte-vs-americano",
+    "name": "Latte vs Americano",
     "slug": "latte-vs-americano",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "lattevsamericano",
@@ -57,6 +57,12 @@
       "eas": {
         "projectId": "ebc224b6-6dd5-4bd8-819a-107c01e11150"
       }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/ebc224b6-6dd5-4bd8-819a-107c01e11150"
     }
   }
 }
